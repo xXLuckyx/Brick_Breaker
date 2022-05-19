@@ -4,6 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+/**
+ * class with the behavior of game board
+ * 
+ * @author Dominik Hürrig
+ * @version 1.0
+ *
+ */
 public class Player {
 
 	// starting x position
@@ -18,7 +25,11 @@ public class Player {
 	// velocity of x
 	private double velX = 0;
 
-	// updates every tick
+	/**
+	 * updates position of game board
+	 * 	
+	 *
+	 */
 	public void tick() {
 		x += velX;
 
@@ -30,24 +41,53 @@ public class Player {
 		}
 	}
 
-	// render object
+	/**
+	 * render blue game board
+	 * 	
+	 * @param g Graphics object
+	 *
+	 */
 	public void render(Graphics g) {
 		g.setColor(Color.blue);
 		g.fillRect((int) x, (int) y, PLAYER_WIDTH, PLAYER_HEIGHT);
 	}
 
+	/**
+	 * get x of board
+	 * 	
+	 * @return returns x coordinate of board
+	 *
+	 */
 	public double getX() {
 		return x;
 	}
 
+	/**
+	 * get y of board
+	 * 	
+	 * @return returns y coordinate of board
+	 *
+	 */
 	public double getY() {
 		return y;
 	}
 
+	/**
+	 * get x velocity of board
+	 * 	
+	 * @return returns x velocity of board
+	 *
+	 */
 	public void setX(int x) {
 		this.x = x;
 	}
 
+	/**
+	 * set x velocity of board
+	 * 	
+	 * @param velX x velocity of board
+	 *
+	 */
 	public void setVelX(double velX) {
 		this.velX = velX;
 	}

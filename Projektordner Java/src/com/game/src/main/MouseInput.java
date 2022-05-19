@@ -3,14 +3,22 @@ package com.game.src.main;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * class with the click behavior of buttons
+ * 
+ * @author Dominik Hürrig
+ * @version 1.0
+ *
+ */
 public class MouseInput implements MouseListener {
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 
-	}
-
+	/**
+	 * sets STATE according to clicked button
+	 * 	
+	 * @param e event when mouse is pressed
+	 *
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		int mx = e.getX();
@@ -124,22 +132,52 @@ public class MouseInput implements MouseListener {
 
 	}
 
+	/**
+	 * event when mouse is released
+	 * 	
+	 * @param e event when mouse is released
+	 *
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * event when mouse is enters window
+	 * 	
+	 * @param e event when mouse enters
+	 *
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * event when mouse is exits window
+	 * 	
+	 * @param e event when mouse exits
+	 *
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	/**
+	 * event when mouse is clicked
+	 * 	
+	 * @param e event when mouse is clicked
+	 *
+	 */
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

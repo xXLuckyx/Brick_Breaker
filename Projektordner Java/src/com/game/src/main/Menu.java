@@ -7,10 +7,24 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+/**
+ * class which loads and selects menu images
+ * 
+ * @author Dominik Hürrig
+ * @version 1.0
+ *
+ */
 public class Menu {
 
 	private Image img1, img2, img3, img4, img5, img6;
 
+	/**
+	 * render blue game board
+	 * 	
+	 * @param g Graphics object
+	 * @throws throws exception when file couldn't be opened
+	 *
+	 */
 	public void render(Graphics g) throws IOException {
 		if (img1 == null) {
 			img1 = ImageIO.read(new File("res/main_menu.png"));

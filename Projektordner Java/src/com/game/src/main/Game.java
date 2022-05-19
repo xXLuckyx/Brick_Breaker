@@ -15,6 +15,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
+/**
+ * class with main game logic
+ * 
+ * @author Dominik Hürrig
+ * @version 1.0
+ *
+ */
 public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
@@ -59,7 +66,11 @@ public class Game extends Canvas implements Runnable {
 	// standard level
 	public static LEVEL Level = LEVEL.ONE;
 
-	// initialization
+	/**
+	 * contains to initialize objects
+	 * 	
+	 *
+	 */
 	public void init() {
 		BufferedImageLoader loader = new BufferedImageLoader();
 
@@ -74,7 +85,11 @@ public class Game extends Canvas implements Runnable {
 		menu = new Menu();
 	}
 
-	// start the core program
+	/**
+	 * starts game loop
+	 * 	
+	 *
+	 */
 	private synchronized void start() {
 		if (running) {
 			return;
@@ -84,7 +99,11 @@ public class Game extends Canvas implements Runnable {
 		thread.start();
 	}
 
-	// stop the core program
+	/**
+	 * stops game loop
+	 * 	
+	 *
+	 */
 	public synchronized void stop() {
 		if (!running) {
 			return;
@@ -98,6 +117,11 @@ public class Game extends Canvas implements Runnable {
 		System.exit(1);
 	}
 
+	/**
+	 * resets game objects
+	 * 	
+	 *
+	 */
 	public synchronized void reset() {
 		pause = true;
 		p = new Player();
@@ -106,6 +130,12 @@ public class Game extends Canvas implements Runnable {
 
 	}
 
+	/**
+	 * selects map from selected level
+	 * 	
+	 * @return map returns current game map
+	 *
+	 */
 	public MapGenerator getMap() {
 		if (Level == LEVEL.ONE) {
 			map = new MapGenerator(2, 4);
@@ -136,7 +166,11 @@ public class Game extends Canvas implements Runnable {
 
 	}
 
-	// Game loop
+	/**
+	 * contains to game loop
+	 * 	
+	 *
+	 */
 	public void run() {
 		init();
 		long lastTime = System.nanoTime();
@@ -175,7 +209,11 @@ public class Game extends Canvas implements Runnable {
 
 	}
 
-	// updates every tick
+	/**
+	 * updates position of objects
+	 * contains collision logic	 * 	
+	 *
+	 */
 	private void tick() {
 		if (State == STATE.GAME && !pause) {
 			// logic for collision of ball with board
@@ -220,7 +258,12 @@ public class Game extends Canvas implements Runnable {
 		}
 	}
 
-	// render objects
+	/**
+	 * render game elements + background
+	 * 	
+	 * @throws throws exception when image couldn't be loaded
+	 *
+	 */
 	private void render() throws IOException {
 		BufferStrategy bs = this.getBufferStrategy();
 
@@ -261,6 +304,12 @@ public class Game extends Canvas implements Runnable {
 
 	}
 
+	/**
+	 * event when key is pressed
+	 * 
+	 * @param e event when key is pressed
+	 *
+	 */
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
 
@@ -280,6 +329,12 @@ public class Game extends Canvas implements Runnable {
 		}
 	}
 
+	/**
+	 * event when key is released
+	 * 
+	 * @param e event when key is released
+	 *
+	 */
 	public void keyReleased(KeyEvent e) {
 		int key = e.getKeyCode();
 
@@ -295,6 +350,12 @@ public class Game extends Canvas implements Runnable {
 		}
 	}
 
+	/**
+	 * program window gets set and game started
+	 * 
+	 * @param args start arguments
+	 *
+	 */
 	public static void main(String args[]) {
 		Game game = new Game();
 
