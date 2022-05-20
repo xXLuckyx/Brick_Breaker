@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * class with the behavior of the ball
  * 
- * @author Dominik Hürrig
+ * @author Dominik Huerrig
  * @version 1.0
  *
  */

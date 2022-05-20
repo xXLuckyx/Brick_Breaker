@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 /**
  * class which filters key events
  * 
- * @author Dominik Hürrig
+ * @author Dominik Huerrig
  * @version 1.0
  *
  */

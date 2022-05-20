@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 /**
  * class with the click behavior of buttons
  * 
- * @author Dominik Hürrig
+ * @author Dominik Huerrig
  * @version 1.0
  *
  */

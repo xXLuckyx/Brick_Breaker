@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 /**
  * class with the behavior of map generation
  * 
- * @author Dominik Hürrig
+ * @author Dominik Huerrig
  * @version 1.0
  *
  */

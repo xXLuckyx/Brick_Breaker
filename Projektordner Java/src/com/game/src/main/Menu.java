@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 /**
  * class which loads and selects menu images
  * 
- * @author Dominik Hürrig
+ * @author Dominik Huerrig
  * @version 1.0
  *
  */
@@ -22,7 +22,7 @@ public class Menu {
 	 * render blue game board
 	 * 	
 	 * @param g Graphics object
-	 * @throws throws exception when file couldn't be opened
+	 * @throws IOException throws exception when file couldn't be opened
 	 *
 	 */
 	public void render(Graphics g) throws IOException {

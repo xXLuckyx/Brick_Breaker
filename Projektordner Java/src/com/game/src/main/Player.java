@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 /**
  * class with the behavior of game board
  * 
- * @author Dominik Hürrig
+ * @author Dominik Huerrig
  * @version 1.0
  *
  */
@@ -75,7 +75,7 @@ public class Player {
 	/**
 	 * get x velocity of board
 	 * 	
-	 * @return returns x velocity of board
+	 * @param x set x coordinate of board
 	 *
 	 */
 	public void setX(int x) {

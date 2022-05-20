@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 /**
  * class to pre-load images
  * 
- * @author Dominik Hürrig
+ * @author Dominik Huerrig
  * @version 1.0
  *
  */
@@ -21,7 +21,7 @@ public class BufferedImageLoader {
 	 * 
 	 * @param path path of the image
 	 * @return returns image
-	 * @exception throws error if image couldn't be loaded
+	 * @exception IOException throws error if image couldn't be loaded
 	 *
 	 */
 	public BufferedImage loadImage(String path) throws IOException {
