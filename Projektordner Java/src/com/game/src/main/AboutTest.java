@@ -31,7 +31,7 @@ public class AboutTest {
 			if (pdfFile.exists()) {
 				if (Desktop.isDesktopSupported()){
 					Desktop.getDesktop().open(pdfFile);
-					System.out.println("Pdf konnte geöffnet werden");
+					System.out.println("Pdf konnte geoeffnet werden");
 				} else {
 					System.out.println("Awt Desktop is not supported!");
 				}
