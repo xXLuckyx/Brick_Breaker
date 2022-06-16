@@ -1,7 +1,10 @@
 package com.game.src.main;
 
+import java.awt.*;
+import java.awt.Desktop;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 
 /**
  * class with the click behavior of buttons
@@ -39,12 +42,29 @@ public class MouseInput implements MouseListener {
 
 					Game.State = Game.STATE.OPTION;
 
-				} else if (my >= 398 && my <= 448) {
+				} else if (my >= 366 && my <= 416) {
 
 					Game.State = Game.STATE.STOP;
 
+				} else if (my >= 427 && my <= 440) {
+
+					try{
+						File pdfFile = new File("res/firm.pdf");
+						if (pdfFile.exists()) {
+							if (Desktop.isDesktopSupported()){
+								Desktop.getDesktop().open(pdfFile);
+							} else {
+								System.out.println("Awt Desktop is not supported!");
+							}
+						} else {
+							System.out.println("File does not exist");
+						}
+					} catch (Exception ex) {
+						ex.printStackTrace();
+					}
+
 				}
-			}
+			} 
 
 		} else if (Game.State == Game.STATE.LEVEL) {
 			if (mx >= 50 && mx <= 120) {

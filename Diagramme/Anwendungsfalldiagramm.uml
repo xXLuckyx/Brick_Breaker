@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1QAJQNeOEeyyIJsLxhro8w" name="Anwendungsfalldiagramm">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_1QWHgNeOEeyyIJsLxhro8w">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_7foFsNe5Eey1a5DHIcKZIQ" name="Spieler"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-d5NoNe5Eey1a5DHIcKZIQ" name="Brick Breaker">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="__ptggNe5Eey1a5DHIcKZIQ" name="Spiel starten">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_ixwoUNe6Eey1a5DHIcKZIQ" name="ExtensionPoint1"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_qFX_4de6Eey1a5DHIcKZIQ" name="ExtensionPoint2"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_tD7bsde6Eey1a5DHIcKZIQ" name="ExtensionPoint3"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_DyrhANe6Eey1a5DHIcKZIQ" name="Level auswählen"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_FWfdINe6Eey1a5DHIcKZIQ" name="Optionen öffnen"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GsLdsNe6Eey1a5DHIcKZIQ" name="Spiel beenden"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_H7284Ne6Eey1a5DHIcKZIQ" name="Spiel pausieren">
+      <extend xmi:type="uml:Extend" xmi:id="_tD7bsNe6Eey1a5DHIcKZIQ" extendedCase="__ptggNe5Eey1a5DHIcKZIQ" extensionLocation="_tD7bsde6Eey1a5DHIcKZIQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_JHzyoNe6Eey1a5DHIcKZIQ" name="Audio einstellen">
+      <generalization xmi:type="uml:Generalization" xmi:id="_0RgcsNe6Eey1a5DHIcKZIQ" general="_FWfdINe6Eey1a5DHIcKZIQ"/>
+      <include xmi:type="uml:Include" xmi:id="_3mgCkNe6Eey1a5DHIcKZIQ" addition="_MQHAUNe6Eey1a5DHIcKZIQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_K3fnkNe6Eey1a5DHIcKZIQ" name="Steuerung einstellen">
+      <generalization xmi:type="uml:Generalization" xmi:id="_1W9B0Ne6Eey1a5DHIcKZIQ" general="_FWfdINe6Eey1a5DHIcKZIQ"/>
+      <include xmi:type="uml:Include" xmi:id="_2T4kINe6Eey1a5DHIcKZIQ" addition="_MQHAUNe6Eey1a5DHIcKZIQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_MQHAUNe6Eey1a5DHIcKZIQ" name="Einstellung speichern"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_YVAVkNe6Eey1a5DHIcKZIQ" memberEnd="_YVA8oNe6Eey1a5DHIcKZIQ _YVA8ode6Eey1a5DHIcKZIQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YVAVkde6Eey1a5DHIcKZIQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YVAVkte6Eey1a5DHIcKZIQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_YVA8oNe6Eey1a5DHIcKZIQ" name="spiel starten" type="__ptggNe5Eey1a5DHIcKZIQ" association="_YVAVkNe6Eey1a5DHIcKZIQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_YVA8ode6Eey1a5DHIcKZIQ" name="spieler" type="_7foFsNe5Eey1a5DHIcKZIQ" association="_YVAVkNe6Eey1a5DHIcKZIQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bprLUNe6Eey1a5DHIcKZIQ" memberEnd="_bprLU9e6Eey1a5DHIcKZIQ _bpryYNe6Eey1a5DHIcKZIQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bprLUde6Eey1a5DHIcKZIQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bprLUte6Eey1a5DHIcKZIQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bprLU9e6Eey1a5DHIcKZIQ" name="level auswählen" type="_DyrhANe6Eey1a5DHIcKZIQ" association="_bprLUNe6Eey1a5DHIcKZIQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bpryYNe6Eey1a5DHIcKZIQ" name="spieler" type="_7foFsNe5Eey1a5DHIcKZIQ" association="_bprLUNe6Eey1a5DHIcKZIQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_dHKdANe6Eey1a5DHIcKZIQ" memberEnd="_dHKdA9e6Eey1a5DHIcKZIQ _dHLEENe6Eey1a5DHIcKZIQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dHKdAde6Eey1a5DHIcKZIQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dHKdAte6Eey1a5DHIcKZIQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dHKdA9e6Eey1a5DHIcKZIQ" name="optionen öffnen" type="_FWfdINe6Eey1a5DHIcKZIQ" association="_dHKdANe6Eey1a5DHIcKZIQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_dHLEENe6Eey1a5DHIcKZIQ" name="spieler" type="_7foFsNe5Eey1a5DHIcKZIQ" association="_dHKdANe6Eey1a5DHIcKZIQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_duKyoNe6Eey1a5DHIcKZIQ" memberEnd="_duLZste6Eey1a5DHIcKZIQ _duLZs9e6Eey1a5DHIcKZIQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_duLZsNe6Eey1a5DHIcKZIQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_duLZsde6Eey1a5DHIcKZIQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_duLZste6Eey1a5DHIcKZIQ" name="spiel beenden" type="_GsLdsNe6Eey1a5DHIcKZIQ" association="_duKyoNe6Eey1a5DHIcKZIQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_duLZs9e6Eey1a5DHIcKZIQ" name="spieler" type="_7foFsNe5Eey1a5DHIcKZIQ" association="_duKyoNe6Eey1a5DHIcKZIQ"/>
+  </packagedElement>
+</uml:Model>

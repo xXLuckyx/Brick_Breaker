@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Brick_Breaker">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <import file="test4.xml"/>
+    <import file="userbuild.xml"/>
+    <path id="TestNG.libraryclasspath">
+        <pathelement location="C:/Users/domin/.p2/pool/plugins/org.testng_7.4.0.r202105021533.jar"/>
+        <pathelement location="C:/Users/domin/.p2/pool/plugins/com.beust.jcommander_1.78.0.jar"/>
+        <pathelement location="C:/Users/domin/.p2/pool/plugins/org.apache-extras.beanshell.bsh_2.0.0.b6.jar"/>
+        <pathelement location="C:/Users/domin/.p2/pool/plugins/org.yaml.snakeyaml_1.21.0.jar"/>
+        <pathelement location="C:/Users/domin/.p2/pool/plugins/org.webjars.jquery_3.5.1.jar"/>
+    </path>
+    <path id="Brick_Breaker.classpath">
+        <path refid="TestNG.libraryclasspath"/>
+        <pathelement location="bin"/>
+    </path>
+    <path id="run.Game.classpath">
+        <path refid="TestNG.libraryclasspath"/>
+        <path refid="Brick_Breaker.classpath"/>
+    </path>
+    <path id="run.Main.classpath">
+        <path refid="TestNG.libraryclasspath"/>
+        <path refid="Brick_Breaker.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+              	<property name="dir.buildfile" value="."/>
+              	                  <property name="dir.workspace" value="${dir.buildfile}"/>
+              	                  <property name="dir.jarfile" value="."/>
+              	<target name="yguard" >
+              		  <taskdef name="yguard"  classname="com.yworks.yguard.YGuardTask" classpath="yguard-3.1.0.jar"/>
+              		  <!-- the following can be adjusted to your needs -->
+              		  <yguard>
+              		  <inoutpair in="${dir.jarfile}/Brick_Breaker.jar" out="${dir.jarfile}/Brick_Breakerobf.jar"/>
+              		  <shrink/>
+              		  </yguard>
+              		</target>
+              		<!-- create .jar -->
+                    <target name="create_run_jar">
+                      <jar destfile="${dir.jarfile}/Brick_Breaker2.jar" filesetmanifest="mergewithoutmain">
+                          <manifest>
+                              <attribute name="Main-Class" value="com.game.src.main.Game"/>
+                              <attribute name="Class-Path" value="."/>
+                          </manifest>
+                          <zipfileset excludes="META-INF/*.SF" src="C:/Users/domin/.p2/pool/plugins/org.testng_7.4.0.r202105021533.jar"/>
+                          <zipfileset excludes="META-INF/*.SF" src="C:/Users/domin/.p2/pool/plugins/com.beust.jcommander_1.78.0.jar"/>
+                          <zipfileset excludes="META-INF/*.SF" src="C:/Users/domin/.p2/pool/plugins/org.apache-extras.beanshell.bsh_2.0.0.b6.jar"/>
+                          <zipfileset excludes="META-INF/*.SF" src="C:/Users/domin/.p2/pool/plugins/org.yaml.snakeyaml_1.21.0.jar"/>
+                          <zipfileset excludes="META-INF/*.SF" src="C:/Users/domin/.p2/pool/plugins/org.webjars.jquery_3.5.1.jar"/>
+                          <fileset dir="${dir.workspace}/Brick_Breaker/bin"/>
+                      </jar>
+                  </target>
+              	
+              	
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project,create_run_jar,yguard" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Brick_Breaker.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="Game">
+        <java classname="Game" failonerror="true" fork="yes">
+            <classpath refid="run.Game.classpath"/>
+        </java>
+    </target>
+    <target name="Main">
+        <java classname="com.game.src.main.Game" failonerror="true" fork="yes">
+            <classpath refid="run.Main.classpath"/>
+        </java>
+    </target>
+</project>
